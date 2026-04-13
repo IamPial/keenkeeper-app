@@ -4,8 +4,27 @@ import navLogoImg from "../../assets/logo.png";
 import { FaHome } from "react-icons/fa";
 import { CiClock2 } from "react-icons/ci";
 import { LuChartSpline } from "react-icons/lu";
+import MyNavLink from "../../ui/MyNavLink";
 
 const Navbar = () => {
+  const links = [
+    {
+      path: "/",
+      text: "Home",
+      icon: <FaHome />,
+    },
+    {
+      path: "/timeline",
+      text: "Timeline",
+      icon: <CiClock2 />,
+    },
+    {
+      path: "/stats",
+      text: "Stats",
+      icon: <LuChartSpline />,
+    },
+  ];
+
   return (
     <nav className="bg-base-100 shadow-sm">
       <div className="navbar container mx-auto ">
@@ -32,46 +51,13 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content  rounded-box z-1 mt-3 w-52 p-2 shadow space-y-1"
             >
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `btn  ${isActive ? "bg-[#244D3F] text-white" : ""}`
-                }
-              >
-                <FaHome
-                  className={({ isActive }) =>
-                    isActive ? "text-white" : "text-black"
-                  }
-                />{" "}
-                Home
-              </NavLink>
-              <NavLink
-                to="/timeline"
-                className={({ isActive }) =>
-                  `btn  ${isActive ? "bg-[#244D3F] text-white" : ""}`
-                }
-              >
-                <CiClock2
-                  className={({ isActive }) =>
-                    isActive ? "text-white" : "text-black"
-                  }
-                />{" "}
-                Timeline
-              </NavLink>
-              <NavLink
-                to="/stats"
-                className={({ isActive }) =>
-                  `btn  ${isActive ? "bg-[#244D3F] text-white" : ""}`
-                }
-              >
-                {" "}
-                <LuChartSpline
-                  className={({ isActive }) =>
-                    isActive ? "text-white" : "text-black"
-                  }
-                />
-                Stats
-              </NavLink>
+              {links.map((item, index) => {
+                return (
+                  <MyNavLink key={index} to={item.path}>
+                    {item.icon} {item.text}
+                  </MyNavLink>
+                );
+              })}
             </ul>
           </div>
           <Link to="/" className="">
@@ -80,46 +66,13 @@ const Navbar = () => {
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal space-x-3 px-1">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `btn  ${isActive ? "bg-[#244D3F] text-white" : ""}`
-              }
-            >
-              <FaHome
-                className={({ isActive }) =>
-                  isActive ? "text-white" : "text-black"
-                }
-              />{" "}
-              Home
-            </NavLink>
-            <NavLink
-              to="/timeline"
-              className={({ isActive }) =>
-                `btn  ${isActive ? "bg-[#244D3F] text-white" : ""}`
-              }
-            >
-              <CiClock2
-                className={({ isActive }) =>
-                  isActive ? "text-white" : "text-black"
-                }
-              />{" "}
-              Timeline
-            </NavLink>
-            <NavLink
-              to="/stats"
-              className={({ isActive }) =>
-                `btn  ${isActive ? "bg-[#244D3F] text-white" : ""}`
-              }
-            >
-              {" "}
-              <LuChartSpline
-                className={({ isActive }) =>
-                  isActive ? "text-white" : "text-black"
-                }
-              />
-              Stats
-            </NavLink>
+            {links.map((item, index) => {
+              return (
+                <MyNavLink key={index} to={item.path}>
+                  {item.icon} {item.text}
+                </MyNavLink>
+              );
+            })}
           </ul>
         </div>
       </div>

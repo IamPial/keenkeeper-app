@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Tag status color */
+/* text-color :#244D3F */
+/* background: #CBFADB */
+
+/* status color */
+/* almost due:#EFAD44 */
+/* over due:#EF4444 */
+/* on track :#244D3F */
+
+/* charts color */
+/* text: #7F37F5 */
+/* video: #37A163 */
+/* call :#244D3F */

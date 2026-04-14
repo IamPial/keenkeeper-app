@@ -7,7 +7,7 @@ import twitter from "../../assets/twitter.png";
 const Footer = () => {
   return (
     <div className="bg-[#244D3F] pt-20">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-2">
         <div className="text-center pb-10">
           <img className="mx-auto mb-4" src={footerLogo} alt="Footer" />
           <p className="text-[16px] leading-6 text-white/70">
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="divider h-0.5 bg-white/20 my-0"></div>
-        <div className="flex justify-between py-8">
+        <div className="flex flex-col-reverse gap-8 justify-center items-center  md:gap-0 md:flex-row md:justify-between md:items-start  py-8">
           <p className="text-white/70">
             &copy; 2026 KeenKeeper. All rights reserved.
           </p>

@@ -1,11 +1,12 @@
 import React from "react";
 import { FiPlus } from "react-icons/fi";
+import FriendsOverview from "./FriendsOverview";
 
 const Banner = () => {
   return (
     <div className="pt-20">
       <div className="container mx-auto px-2">
-        <div className="space-y-4 text-center">
+        <div className="space-y-4 text-center pb-10">
           <h2 className="font-bold text-5xl text-slate-900">
             Friends to keep close in your life
           </h2>
@@ -19,6 +20,8 @@ const Banner = () => {
             </button>
           </div>
         </div>
+
+        <FriendsOverview></FriendsOverview>
       </div>
     </div>
   );

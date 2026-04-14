@@ -4,6 +4,9 @@ import { BsArchive } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import useFriends from "./../hooks/useFriends";
 import FriendsOverviewCard from "./FriendsOverviewCard";
+import callImg from "../assets/call.png";
+import textImg from "../assets/text.png";
+import videoImg from "../assets/video.png";
 
 const DetailsCard = () => {
   const { friends } = useFriends();
@@ -14,6 +17,7 @@ const DetailsCard = () => {
   return (
     <div className="py-20 container mx-auto">
       <div className="grid grid-cols-3 gap-6">
+        {/* Details Card Left Section Start */}
         <div className="col-span-1 border rounded-lg">
           <div className="text-center shadow-lg rounded-lg p-6">
             <img
@@ -57,6 +61,9 @@ const DetailsCard = () => {
             </button>
           </div>
         </div>
+        {/* Details Card Left Section End */}
+
+        {/* Details Card Right Section Start */}
         <div className="border col-span-2 rounded-lg">
           <div className="flex flex-col gap-6">
             <div className="grid grid-cols-3 gap-6">
@@ -78,8 +85,29 @@ const DetailsCard = () => {
                 </span>
               </p>
             </div>
+            <div className="p-6 shadow-sm">
+              <h2 className="font-medium text-[#244D3F] text-xl">
+                Quick Check-In
+              </h2>
+              <div className="grid grid-cols-3 gap-6">
+                <div className=" rounded-lg text-center p-8 space-y-3 shadow-sm ">
+                  <img src={callImg} alt="Call" className="mx-auto w-8" />
+                  <h2 className="text-lg text-slate-500 ">Call</h2>
+                </div>
+                <div className=" rounded-lg text-center p-8 space-y-3 shadow-sm ">
+                  <img src={textImg} alt="Call" className="mx-auto w-8" />
+                  <h2 className="text-lg text-slate-500 ">Text</h2>
+                </div>
+                <div className=" rounded-lg text-center p-8 space-y-3 shadow-sm ">
+                  <img src={videoImg} alt="Call" className="mx-auto w-8" />
+                  <h2 className="text-lg text-slate-500 ">Video</h2>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* Details Card Right Section End */}
       </div>
     </div>
   );

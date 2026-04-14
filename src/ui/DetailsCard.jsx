@@ -2,8 +2,15 @@ import React from "react";
 import { MdNotificationsPaused } from "react-icons/md";
 import { BsArchive } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import useFriends from "./../hooks/useFriends";
+import FriendsOverviewCard from "./FriendsOverviewCard";
 
 const DetailsCard = () => {
+  const { friends } = useFriends();
+
+  const days = friends.filter((item) => item.days_since_contact);
+  console.log(days, "hd");
+
   return (
     <div className="py-20 container mx-auto">
       <div className="grid grid-cols-3 gap-6">
@@ -51,7 +58,13 @@ const DetailsCard = () => {
           </div>
         </div>
         <div className="border col-span-2 rounded-lg">
-          <h2>hll</h2>
+          <div className="flex flex-col gap-6">
+            <div className="grid grid-cols-3 gap-6">
+              <FriendsOverviewCard value="62" text="Days Since Contact" />
+              <FriendsOverviewCard text="Goal (Days)" value="30" />
+              <FriendsOverviewCard text="Next Due" value="Feb 27, 2026" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

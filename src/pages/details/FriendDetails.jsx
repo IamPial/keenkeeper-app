@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { MdNotificationsPaused } from "react-icons/md";
 import { BsArchive } from "react-icons/bs";
@@ -6,14 +6,17 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import useFriends from "../../hooks/useFriends";
 import { useParams } from "react-router";
 import FriendsOverviewCard from "../../ui/FriendsOverviewCard";
-import CardDetailsBtn from "../../components/shared/CardDetailsBtn";
+
 import callImg from "../../assets/call.png";
 import textImg from "../../assets/text.png";
 import videoImg from "../../assets/video.png";
+import { FriendsContext } from "../../context/FriendsContext";
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
-  const { friends } = useFriends();
   const { id } = useParams();
+  const { friends } = useFriends();
+  const { listItem, setListItem } = useContext(FriendsContext);
 
   const expectedDetails = friends.find((item) => item.id === parseInt(id));
   if (!expectedDetails) return null;
@@ -32,6 +35,24 @@ const FriendDetails = () => {
   //convert date into a date string with separator
   const date = new Date(next_due_date).toDateString().slice(4).split(" ");
   const strDate = date[0] + " " + date[1] + " , " + date[2];
+
+  const handleClick = (text) => {
+    if (text === "call") {
+      const newObj = { ...expectedDetails, icon: callImg };
+      setListItem([...listItem, newObj]);
+      toast.success(` Calling ${newObj.name} `);
+    }
+    if (text === "text") {
+      const newObj = { ...expectedDetails, icon: textImg };
+      setListItem([...listItem, newObj]);
+      toast.success(` Texting ${newObj.name} `);
+    }
+    if (text === "video") {
+      const newObj = { ...expectedDetails, icon: videoImg };
+      setListItem([...listItem, newObj]);
+      toast.success(` Video Calling ${newObj.name} `);
+    }
+  };
 
   return (
     <div className="py-20 container mx-auto px-2">
@@ -112,14 +133,40 @@ const FriendDetails = () => {
                 </span>
               </p>
             </div>
-            <div className="p-6 shadow-sm">
+            <div className="p-6 shadow-sm rounded-lg">
               <h2 className="font-medium text-[#244D3F] text-xl">
                 Quick Check-In
               </h2>
               <div className="grid grid-cols-3 gap-6">
-                <CardDetailsBtn imgSrc={callImg} text={"Call"} />
-                <CardDetailsBtn imgSrc={textImg} text={"Text"} />
-                <CardDetailsBtn imgSrc={videoImg} text={"Video"} />
+                <button
+                  onClick={() => handleClick("call")}
+                  className="btn rounded-lg text-center p-15  mt-4 "
+                >
+                  <div className="space-y-3 ">
+                    <img src={callImg} alt={"Call"} className="mx-auto w-8" />
+                    <h2 className="text-lg text-slate-500 ">Call</h2>
+                  </div>
+                </button>
+
+                <button
+                  onClick={() => handleClick("text")}
+                  className="btn rounded-lg text-center p-15  mt-4 "
+                >
+                  <div className="space-y-3  ">
+                    <img src={textImg} alt={"Text"} className="mx-auto w-8" />
+                    <h2 className="text-lg text-slate-500 ">Text</h2>
+                  </div>
+                </button>
+
+                <button
+                  onClick={() => handleClick("video")}
+                  className="btn rounded-lg text-center p-15  mt-4 "
+                >
+                  <div className="space-y-3  ">
+                    <img src={videoImg} alt={"Video"} className="mx-auto w-8" />
+                    <h2 className="text-lg text-slate-500 ">Video</h2>
+                  </div>
+                </button>
               </div>
             </div>
           </div>

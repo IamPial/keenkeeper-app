@@ -35,25 +35,33 @@ const TimeLinePage = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-6 ">
-        {listItem.map((list, index) => {
-          return (
-            <div
-              key={index}
-              className="flex gap-6 items-center border border-gray-200 rounded-lg p-4 "
-            >
-              <img src={list.icon} alt="video" />
-              <div>
-                <h2 className="font-medium text-2xl text-[#244D3F]">
-                  Video{" "}
-                  <span className="text-lg text-gray-500 font-normal">
-                    with {list.name}
-                  </span>
-                </h2>
-                <p className="font-medium text-gray-500">{strDate}</p>
+        {listItem.length === 0 ? (
+          <div className="py-10 text-center">
+            <h2 className="text-slate-600 font-extrabold text-3xl md:text-5xl">
+              No notification are available right now!
+            </h2>
+          </div>
+        ) : (
+          listItem.map((list, index) => {
+            return (
+              <div
+                key={index}
+                className="flex gap-6 items-center border border-gray-200 rounded-lg p-4 "
+              >
+                <img src={list.icon} alt="video" />
+                <div>
+                  <h2 className="font-medium text-2xl text-[#244D3F]">
+                    Video{" "}
+                    <span className="text-lg text-gray-500 font-normal">
+                      with {list.name}
+                    </span>
+                  </h2>
+                  <p className="font-medium text-gray-500">{strDate}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
       <div className="flex items-center justify-center mt-10">
         <Link to="/" className="btn btn-lg bg-[#244D3F] text-white">

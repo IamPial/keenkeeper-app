@@ -15,10 +15,10 @@ const DetailsCard = () => {
   console.log(days, "hd");
 
   return (
-    <div className="py-20 container mx-auto">
-      <div className="grid grid-cols-3 gap-6">
+    <div className="py-20 container mx-auto px-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Details Card Left Section Start */}
-        <div className="col-span-1 border rounded-lg">
+        <div className="col-span-full lg:col-span-1  rounded-lg">
           <div className="text-center shadow-lg rounded-lg p-6">
             <img
               src="https://i.ibb.co.com/rGDn16G1/shopia.jpg"
@@ -64,9 +64,9 @@ const DetailsCard = () => {
         {/* Details Card Left Section End */}
 
         {/* Details Card Right Section Start */}
-        <div className="border col-span-2 rounded-lg">
+        <div className=" col-span-full lg:col-span-2 rounded-lg">
           <div className="flex flex-col gap-6">
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <FriendsOverviewCard value="62" text="Days Since Contact" />
               <FriendsOverviewCard text="Goal (Days)" value="30" />
               <FriendsOverviewCard text="Next Due" value="Feb 27, 2026" />

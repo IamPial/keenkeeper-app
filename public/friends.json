@@ -138,7 +138,7 @@
     "email": "sophia.martinez@example.com",
     "days_since_contact": 1,
     "status": "on-track",
-    "tags": ["language exchange", "travel"],
+    "tags": ["hobby", "travel"],
     "bio": "Met through a language exchange program. Planning future trips together.",
     "goal": 30,
     "next_due_date": "2026-05-13"

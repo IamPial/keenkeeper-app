@@ -1,40 +1,54 @@
 import React from "react";
 import useFriends from "../../../hooks/useFriends";
+import FriendsOverviewCard from "../../../ui/FriendsOverviewCard";
 
 const FriendsOverview = () => {
   const { friends } = useFriends();
-  console.log(friends, "friends");
-  //for attention
-  const almostDue = friends.filter((item) => item.status === "almost due");
-  const overDue = friends.filter((item) => item.status === "overdue");
-  const needAttention = almostDue.length + overDue.length;
 
-  //for interaction
+  //for attention status
+  const needAttention = friends.filter(
+    (item) => (item.status === "almost due") + (item.status === "overdue"),
+  );
+
+  //for interaction status
   const thisMonthInteraction = friends.filter(
     (item) => item.days_since_contact <= 30,
   );
 
-  const track = friends.filter((item) => item.status === "on-track");
-  console.log(track);
+  //for on-track status
+  const onTrack = friends.filter((item) => item.status === "on-track");
+
+  const tracking = [
+    {
+      text: "Total Friends",
+      value: friends.length,
+    },
+    {
+      text: "On Track",
+      value: onTrack.length,
+    },
+    {
+      text: "Need Attention",
+      value: needAttention.length,
+    },
+    {
+      text: "Interactions This Month",
+      value: thisMonthInteraction.length,
+    },
+  ];
 
   return (
-    <div>
-      <div>
-        <h2>{friends.length}</h2>
-        <h2>total</h2>
+    <div className="container mx-auto px-2">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        {tracking.map((trackingItem, index) => (
+          <FriendsOverviewCard
+            key={index}
+            text={trackingItem.text}
+            value={trackingItem.value}
+          />
+        ))}
       </div>
-      <div>
-        <h2>{track.length}</h2>
-        <h2>on track</h2>
-      </div>
-      <div>
-        <h2>{needAttention}</h2>
-        <h2>attention</h2>
-      </div>
-      <div>
-        <h2>{thisMonthInteraction.length}</h2>
-        <h2>interaction</h2>
-      </div>
+      <div className="divider h-0.5 bg-gray-100 my-20"></div>
     </div>
   );
 };

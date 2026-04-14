@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "John Doe",
-    "picture": "https://i.ibb.co.com/h1Ms4zzJ/john.jpg",
+    "picture": "https://i.ibb.co.com/TDLxYs6c/john.jpg",
     "email": "john.doe@example.com",
     "days_since_contact": 9,
     "status": "almost due",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Sarah Ahmed",
-    "picture": "https://i.ibb.co.com/NgKzC8G3/sarah.jpg",
+    "picture": "https://i.ibb.co.com/23cqJ3vj/sarah.jpg",
     "email": "sarah.ahmed@example.com",
     "days_since_contact": 5,
     "status": "on-track",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Michael Chen",
-    "picture": "https://i.ibb.co.com/XrZWmGYt/michal.jpg",
+    "picture": "https://i.ibb.co.com/8gYZcJv7/michal.jpg",
     "email": "michael.chen@example.com",
     "days_since_contact": 18,
     "status": "almost due",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "name": "Emily Rodriguez",
-    "picture": "https://i.ibb.co.com/93mQtfDt/emilly.jpg",
+    "picture": "https://i.ibb.co.com/SqXkF0R/emilly.jpg",
     "email": "emily.rodriguez@example.com",
     "days_since_contact": 35,
     "status": "overdue",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "name": "David Kim",
-    "picture": "https://i.ibb.co.com/7N2DQByH/david.jpg",
+    "picture": "https://i.ibb.co.com/RkrD6BRW/david.jpg",
     "email": "david.kim@example.com",
     "days_since_contact": 12,
     "status": "almost due",
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "name": "Aisha Khan",
-    "picture": "https://i.ibb.co.com/rKmqd16P/aisha.jpg",
+    "picture": "https://i.ibb.co.com/qY970KDD/aisha.jpg",
     "email": "aisha.khan@example.com",
     "days_since_contact": 2,
     "status": "on-track",
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "name": "Daniel Smith",
-    "picture": "https://i.ibb.co.com/G4sh3NSh/daniel.jpg",
+    "picture": "https://i.ibb.co.com/B2bfpdzT/daniel.jpg",
     "email": "daniel.smith@example.com",
     "days_since_contact": 25,
     "status": "overdue",
@@ -86,7 +86,7 @@
   {
     "id": 8,
     "name": "Fatima Noor",
-    "picture": "https://i.ibb.co.com/39SBxgXK/fatima.jpg",
+    "picture": "https://i.ibb.co.com/356n21C2/fatima.jpg",
     "email": "fatima.noor@example.com",
     "days_since_contact": 13,
     "status": "almost due",
@@ -98,7 +98,7 @@
   {
     "id": 9,
     "name": "James Wilson",
-    "picture": "https://i.ibb.co.com/Pz5x5NHn/james.jpg",
+    "picture": "https://i.ibb.co.com/MDbkZwFK/james.jpg",
     "email": "james.wilson@example.com",
     "days_since_contact": 6,
     "status": "on-track",
@@ -110,7 +110,7 @@
   {
     "id": 10,
     "name": "Nusrat Jahan",
-    "picture": "https://i.ibb.co.com/9HHPF2gq/nusrat.jpg",
+    "picture": "https://i.ibb.co.com/CKGY8c1k/nusrat.jpg",
     "email": "nusrat.jahan@example.com",
     "days_since_contact": 20,
     "status": "almost due",
@@ -122,7 +122,7 @@
   {
     "id": 11,
     "name": "Omar Faruk",
-    "picture": "https://i.ibb.co.com/ccBQg7r9/omar.jpg",
+    "picture": "https://i.ibb.co.com/vxqzPs97/omar.jpg",
     "email": "omar.faruk@example.com",
     "days_since_contact": 15,
     "status": "almost due",
@@ -134,7 +134,7 @@
   {
     "id": 12,
     "name": "Sophia Martinez",
-    "picture": "https://i.ibb.co.com/rKBDMqxk/shopia.jpg",
+    "picture": "https://i.ibb.co.com/rGDn16G1/shopia.jpg",
     "email": "sophia.martinez@example.com",
     "days_since_contact": 1,
     "status": "on-track",

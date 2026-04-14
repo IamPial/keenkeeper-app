@@ -20,8 +20,6 @@ const Banner = () => {
             </button>
           </div>
         </div>
-
-        <FriendsOverview></FriendsOverview>
       </div>
     </div>
   );

@@ -64,6 +64,20 @@ const DetailsCard = () => {
               <FriendsOverviewCard text="Goal (Days)" value="30" />
               <FriendsOverviewCard text="Next Due" value="Feb 27, 2026" />
             </div>
+            <div className="shadow-sm p-6 rounded-lg">
+              <div className="flex justify-between mb-5">
+                <h2 className="font-medium text-xl text-[#244D3F] ">
+                  Relationship Goal
+                </h2>
+                <button className="btn font-medium text-sm">Edit</button>
+              </div>
+              <p className="text-lg text-slate-500">
+                Connect Every{" "}
+                <span className="font-bold text-lg text-slate-800">
+                  30 Days
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </div>

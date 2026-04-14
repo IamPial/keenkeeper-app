@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { FriendsContext } from "./FriendsContext";
 
-const FriendContextProvider = () => {
+const FriendContextProvider = ({ children }) => {
+  const [listItem, setListItem] = useState([]);
+  const data = {
+    listItem,
+    setListItem,
+  };
   return (
     <div>
-      <h2>Hllo</h2>
+      <FriendsContext.Provider value={data}>{children}</FriendsContext.Provider>
     </div>
   );
 };

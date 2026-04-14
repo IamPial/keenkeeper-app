@@ -22,7 +22,7 @@ const Card = ({ friend }) => {
             return (
               <span
                 key={index}
-                className="badge bg-[#CBFADB] text-[#244D3F] py-4 uppercase rounded-full "
+                className="badge bg-[#CBFADB] text-[#244D3F] py-4 uppercase rounded-full font-medium "
               >
                 {item}
               </span>
@@ -30,7 +30,7 @@ const Card = ({ friend }) => {
           })}
         </div>
         <span
-          className={`badge  capitalize py-4 text-white rounded-full ${status === "almost due" ? "badge bg-[#EFAD44]" : status === "on-track" ? "bg-[#244D3F]" : "bg-[#EF4444]"}`}
+          className={`badge  capitalize py-4 text-white rounded-full font-medium ${status === "almost due" ? "badge bg-[#EFAD44]" : status === "on-track" ? "bg-[#244D3F]" : "bg-[#EF4444]"}`}
         >
           {status}
         </span>

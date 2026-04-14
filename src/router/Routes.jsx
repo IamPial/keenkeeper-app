@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         Component: HomePage,
       },
       {
-        path: "/home/:id",
+        path: "details/:id",
         Component: FriendDetails,
       },
       {

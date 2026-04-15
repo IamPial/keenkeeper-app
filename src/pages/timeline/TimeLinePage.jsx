@@ -1,37 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-
 import { FriendsContext } from "../../context/FriendsContext";
 import { Link } from "react-router";
 
 const TimeLinePage = () => {
   const { listItem } = useContext(FriendsContext);
+  const [filter, setFilter] = useState(listItem);
 
   //convert date into a date string with separator
   const date = new Date().toDateString().slice(4).split(" ");
   const strDate = date[0] + " " + date[1] + " , " + date[2];
 
+  const handleFilterBtn = (text) => {
+    const filteringArray = listItem.filter((item) => item.text === text);
+    setFilter(filteringArray);
+  };
+
   return (
     <div className="py-20 container mx-auto px-2 md:px-0">
       <div className="space-y-6 mb-6">
         <h2 className="text-5xl font-bold text-slate-900">Timeline</h2>
-        <div className="dropdown dropdown-center  ">
-          <div
-            tabIndex={0}
-            role="button"
-            className="w-52 text-left font-normal btn m-1"
-          >
-            Filter Timeline <IoIosArrowDown />
-          </div>
-          <ul
-            tabIndex="-1"
-            className="dropdown-content menu bg-base-300 rounded-box z-1 w-52 text-center p-2 shadow-sm"
-          >
-            <li>Hello</li>
-            <li>Hello</li>
-            <li>Hello</li>
-          </ul>
-        </div>
+        <select defaultValue="Medium" className="select select-sm md:select-md">
+          <option disabled={true}>Filter timeline</option>
+          <option onClick={() => handleFilterBtn("call")}>Call</option>
+          <option onClick={() => handleFilterBtn("text")}>Text</option>
+          <option onClick={() => handleFilterBtn("video")}>Video</option>
+        </select>
       </div>
 
       <div className="grid grid-cols-1 gap-6 ">
@@ -42,13 +36,13 @@ const TimeLinePage = () => {
             </h2>
           </div>
         ) : (
-          listItem.map((list, index) => {
+          filter.map((list, index) => {
             return (
               <div
                 key={index}
                 className="flex gap-6 items-center border border-gray-200 rounded-lg p-4 "
               >
-                <img src={list.icon} alt="video" />
+                <img src={list.icon} alt={list.text} />
                 <div>
                   <h2 className="font-medium text-2xl text-[#244D3F] capitalize">
                     {list.text}{" "}

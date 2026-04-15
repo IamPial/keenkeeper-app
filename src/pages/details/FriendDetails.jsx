@@ -4,7 +4,7 @@ import { MdNotificationsPaused } from "react-icons/md";
 import { BsArchive } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import useFriends from "../../hooks/useFriends";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import FriendsOverviewCard from "../../ui/FriendsOverviewCard";
 
 import callImg from "../../assets/call.png";
@@ -38,27 +38,27 @@ const FriendDetails = () => {
 
   const handleClick = (text) => {
     if (text === "call") {
-      const newObj = { ...expectedDetails, icon: callImg };
+      const newObj = { ...expectedDetails, icon: callImg, text: "call" };
       setListItem([...listItem, newObj]);
       toast.success(` Calling ${newObj.name} `);
     }
     if (text === "text") {
-      const newObj = { ...expectedDetails, icon: textImg };
+      const newObj = { ...expectedDetails, icon: textImg, text: "text" };
       setListItem([...listItem, newObj]);
       toast.success(` Texting ${newObj.name} `);
     }
     if (text === "video") {
-      const newObj = { ...expectedDetails, icon: videoImg };
+      const newObj = { ...expectedDetails, icon: videoImg, text: "video" };
       setListItem([...listItem, newObj]);
       toast.success(` Video Calling ${newObj.name} `);
     }
   };
 
   return (
-    <div className="py-20 container mx-auto px-2">
+    <div className="py-20 container mx-auto px-2 bg-base-200">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Details Card Left Section Start */}
-        <div className="col-span-full lg:col-span-1  rounded-lg">
+        <div className="col-span-full lg:col-span-1  rounded-lg  p-4">
           <div className="text-center shadow-md rounded-lg p-6">
             <img
               src={picture}
@@ -91,6 +91,7 @@ const FriendDetails = () => {
               <p className="text-slate-500 text-sm">{email}</p>
             </div>
           </div>
+
           <div className="flex flex-col mt-4 gap-2">
             <button className="btn">
               <MdNotificationsPaused className="text-slate-900" /> Snooze 2
@@ -173,6 +174,11 @@ const FriendDetails = () => {
         </div>
 
         {/* Details Card Right Section End */}
+      </div>
+      <div className="pt-10 text-center">
+        <Link to="/" className="btn text-white bg-[#244D3F]">
+          Go Back
+        </Link>
       </div>
     </div>
   );

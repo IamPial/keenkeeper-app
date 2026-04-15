@@ -134,14 +134,14 @@ const FriendDetails = () => {
                 </span>
               </p>
             </div>
-            <div className="p-6 shadow-sm rounded-lg">
+            <div className="p-2 sm:p-6 shadow-sm rounded-lg">
               <h2 className="font-medium text-[#244D3F] text-xl">
                 Quick Check-In
               </h2>
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 sm:gap-6 gap-1">
                 <button
                   onClick={() => handleClick("call")}
-                  className="btn rounded-lg text-center p-15  mt-4 "
+                  className="btn rounded-lg text-center p-10 sm:p-15  mt-4 "
                 >
                   <div className="space-y-3 ">
                     <img src={callImg} alt={"Call"} className="mx-auto w-8" />
@@ -151,7 +151,7 @@ const FriendDetails = () => {
 
                 <button
                   onClick={() => handleClick("text")}
-                  className="btn rounded-lg text-center p-15  mt-4 "
+                  className="btn rounded-lg text-center p-10 sm:p-15 mt-4 "
                 >
                   <div className="space-y-3  ">
                     <img src={textImg} alt={"Text"} className="mx-auto w-8" />
@@ -161,7 +161,7 @@ const FriendDetails = () => {
 
                 <button
                   onClick={() => handleClick("video")}
-                  className="btn rounded-lg text-center p-15  mt-4 "
+                  className="btn rounded-lg text-center p-10 sm:p-15  mt-4 "
                 >
                   <div className="space-y-3  ">
                     <img src={videoImg} alt={"Video"} className="mx-auto w-8" />

@@ -40,17 +40,17 @@ const FriendDetails = () => {
     if (text === "call") {
       const newObj = { ...expectedDetails, icon: callImg, text: "call" };
       setListItem([...listItem, newObj]);
-      toast.success(` Calling ${newObj.name} `);
+      toast.success(` Call with ${newObj.name} `);
     }
     if (text === "text") {
       const newObj = { ...expectedDetails, icon: textImg, text: "text" };
       setListItem([...listItem, newObj]);
-      toast.success(` Texting ${newObj.name} `);
+      toast.success(` Text with ${newObj.name} `);
     }
     if (text === "video") {
       const newObj = { ...expectedDetails, icon: videoImg, text: "video" };
       setListItem([...listItem, newObj]);
-      toast.success(` Video Calling ${newObj.name} `);
+      toast.success(` Video with ${newObj.name} `);
     }
   };
 

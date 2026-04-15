@@ -32,7 +32,7 @@ const TimeLinePage = () => {
         {listItem.length === 0 ? (
           <div className="py-10 text-center">
             <h2 className="text-slate-600 font-extrabold text-3xl md:text-5xl">
-              No notification are available right now!
+              No history are available right now!
             </h2>
           </div>
         ) : (

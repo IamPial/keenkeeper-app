@@ -4,11 +4,11 @@
 
 ## Technology Used
 
-**React.Js**
-**React Router DOM**
-**TailwindCss**
-**Daisy UI**
-**Recharts**
-**React spinners**
-**React Toastify**
-**React Icons**
+- **React.Js**
+- **React Router DOM**
+- **TailwindCss**
+- **Daisy UI**
+- **Recharts**
+- **React spinners**
+- **React Toastify**
+- **React Icons**

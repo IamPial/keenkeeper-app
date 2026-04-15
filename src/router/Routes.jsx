@@ -3,8 +3,9 @@ import RootLayout from "../layout/RootLayout";
 import HomePage from "../pages/homepage/HomePage";
 import FriendDetails from "../pages/details/FriendDetails";
 import TimeLinePage from "../pages/timeline/TimeLinePage";
-import StatsPage from "../pages/Stats/StatsPage";
+
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
+import StatsPage from "../pages/stats/StatsPage";
 
 const router = createBrowserRouter([
   {

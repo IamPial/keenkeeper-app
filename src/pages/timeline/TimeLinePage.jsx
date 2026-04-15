@@ -50,8 +50,8 @@ const TimeLinePage = () => {
               >
                 <img src={list.icon} alt="video" />
                 <div>
-                  <h2 className="font-medium text-2xl text-[#244D3F]">
-                    Video{" "}
+                  <h2 className="font-medium text-2xl text-[#244D3F] capitalize">
+                    {list.text}{" "}
                     <span className="text-lg text-gray-500 font-normal">
                       with {list.name}
                     </span>

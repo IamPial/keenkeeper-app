@@ -6,7 +6,7 @@ const MyNavLink = ({ children, to }) => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `btn  ${isActive ? "bg-[#244D3F] text-white" : ""}`
+        `btn shadow-none  ${isActive ? "bg-[#244D3F] text-white" : ""}`
       }
     >
       {children}

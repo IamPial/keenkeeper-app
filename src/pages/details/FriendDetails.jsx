@@ -12,13 +12,24 @@ import textImg from "../../assets/text.png";
 import videoImg from "../../assets/video.png";
 import { FriendsContext } from "../../context/FriendsContext";
 import { toast } from "react-toastify";
+import { BounceLoader } from "react-spinners";
 
 const FriendDetails = () => {
   const { id } = useParams();
-  const { friends } = useFriends();
+  const { friends, loading } = useFriends();
   const { listItem, setListItem } = useContext(FriendsContext);
 
   const expectedDetails = friends.find((item) => item.id === parseInt(id));
+
+  // set loading status
+  if (loading) {
+    return (
+      <div className="py-50 flex justify-center items-center">
+        <BounceLoader color="#244D3F" />
+      </div>
+    );
+  }
+  //for preventing the undefined value
   if (!expectedDetails) return null;
   const {
     name,
